@@ -1,11 +1,12 @@
 ---
+#
 title: "VarImpGamma"
 author: "Daniela Moleiro"
 date: "27 de Março de 2018"
 output: 
   pdf_document: 
     latex_engine: lualatex
-header-includes:
+  header-includes:
   - \usepackage{color}
 ---
 
