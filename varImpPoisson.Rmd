@@ -1,0 +1,82 @@
+---
+title: "VarImpPoisson"
+author: "Daniela Moleiro"
+date: "27 de Março de 2018"
+output: 
+  pdf_document: 
+    latex_engine: lualatex
+header-includes:
+  - \usepackage{color}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#**RESULTADOS DA FUNÇÃO "varImpPoisson"**
+```{r varImpPoisson, echo=FALSE, cache=FALSE, include=FALSE, results=FALSE, warning=FALSE, comment=FALSE, warning=FALSE}
+library(VarImp)
+list3<-varImpPoisson(stackloss, class=3)
+```
+
+##\color{blue}**MODELO FORWARD:**\color{black}
+
+###**As variáveis que constituem o modelo são:**  
+```{r, echo=FALSE}
+list3[[1]]$Variaveis_Coeficientes
+```
+&nbsp;
+
+**O valor do AIC é:**
+`r list3[[1]]$AIC`
+
+**A média dos resíduos é: **
+`r list3[[1]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:**
+`r list3[[1]]$DesvioPadrao_Residuos`
+
+**O valor do RMSE é:**
+`r list3[[1]]$RMSE`
+
+##\color{blue}**MODELO BACKWARD:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list3[[2]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do AIC é:**
+`r list3[[2]]$AIC`
+
+**A média dos resíduos é:** 
+`r list3[[2]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:** 
+`r list3[[2]]$DesvioPadrao_Residuos`
+
+**O valor do RMSE é:**
+`r list3[[2]]$RMSE`
+
+##\color{blue}**MODELO BOOTH:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list3[[3]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do AIC é:**
+`r list3[[3]]$AIC`
+
+**A média dos resíduos é:**
+`r list3[[3]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:**
+`r list3[[3]]$DesvioPadrao_Residuos`
+
+**O valor do RMSE é:**
+`r list3[[3]]$RMSE`

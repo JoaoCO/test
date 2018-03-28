@@ -1,0 +1,110 @@
+---
+title: "VarImpBin"
+author: "Daniela Moleiro"
+date: "27 de Março de 2018"
+output: 
+  pdf_document: 
+    latex_engine: lualatex
+header-includes:
+  - \usepackage{color}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r varImpBin, echo=FALSE, cache=FALSE, include=FALSE, results=FALSE, warning=FALSE, comment=FALSE, warning=FALSE}
+library(VarImp)
+Puromycin$state<-ifelse(Puromycin$state=="treated",0,1) 
+list1<-varImpBin(Puromycin, 3)
+```
+#**RESULTADOS DA FUNÇÃO "varImpBin"**
+
+##\color{blue}**MODELO FORWARD:**\color{black}
+
+###**As variáveis que constituem o modelo são:**  
+```{r, echo=FALSE}
+list1[[1]]$Variaveis_Coeficientes
+```
+&nbsp;
+
+**O valor do AIC é:**
+`r list1[[1]]$AIC`
+
+**A média dos resíduos é:**
+`r list1[[1]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:**
+`r list1[[1]]$DesvioPadrao_Residuos`
+
+
+###**A matriz de confusão e as estatísticas obtidas a partir da mesma são:**
+```{r, echo=FALSE}
+list1[[1]]$Estatisticas_MatrizConfusao
+```
+
+&nbsp;
+
+**A percentagem da área da curva ROC é de:**
+`r list1[[1]]$Area_curvaROC*100`%
+
+
+##\color{blue}**MODELO BACKWARD:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list1[[2]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do AIC é:**
+`r list1[[2]]$AIC`
+
+**A média dos resíduos é:** 
+`r list1[[2]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:** 
+`r list1[[2]]$DesvioPadrao_Residuos`
+
+
+###**A matriz de confusão e as estatísticas obtidas a partir da mesma são:**
+```{r, echo=FALSE}
+list1[[2]]$Estatisticas_MatrizConfusao
+```
+
+&nbsp;
+
+**A percentagem da área da curva ROC é de:**
+`r list1[[2]]$Area_curvaROC*100`%
+
+
+##\color{blue}**MODELO BOOTH:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list1[[3]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do AIC é:**
+`r list1[[3]]$AIC`
+
+**A média dos resíduos é:**
+`r list1[[3]]$Media_Residuos`
+
+**O desvio padrão dos resíduos é:**
+`r list1[[3]]$DesvioPadrao_Residuos`
+
+
+###**A matriz de confusão e as estatísticas obtidas a partir da mesma são:**
+```{r, echo=FALSE}
+list1[[3]]$Estatisticas_MatrizConfusao
+```
+
+&nbsp;
+
+**A percentagem da área da curva ROC é de:**
+`r list1[[3]]$Area_curvaROC*100`%

@@ -1,0 +1,63 @@
+---
+title: "VarImpPenCont"
+author: "Daniela Moleiro"
+date: "27 de Março de 2018"
+output: 
+  pdf_document: 
+    latex_engine: lualatex
+header-includes:
+  - \usepackage{color}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#**RESULTADOS DA FUNÇÃO "varImpPenCont"**
+```{r varImpPenBi, echo=FALSE, cache=FALSE, include=FALSE, results=FALSE, warning=FALSE, comment=FALSE, warning=FALSE}
+library(VarImp)
+list6<-varImpPenCont(mtcars, class=6)
+```
+
+##\color{blue}**MODELO LASSO:**\color{black}
+
+###**As variáveis que constituem o modelo são:**  
+```{r, echo=FALSE}
+list6[[1]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do lambda.min é de:**
+`r list6[[1]]$lambda.min`
+
+**O valor do lambda.1se é de:**
+`r list6[[1]]$lambda.1se`
+
+&nbsp;
+
+##\color{blue}**MODELO ELASTIC NET:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list6[[2]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+##\color{blue}**MODELO RIDGE REGRESSION:**\color{black}
+
+###**As variáveis que constituem o modelo são:**
+```{r, echo=FALSE}
+list6[[3]]$Variaveis_Coeficientes
+```
+
+&nbsp;
+
+**O valor do lambda.min é de:**
+`r list6[[3]]$lambda.min`
+
+**O valor do lambda.1se é de:**
+`r list6[[3]]$lambda.1se`
+
+&nbsp;
