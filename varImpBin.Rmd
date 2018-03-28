@@ -1,5 +1,4 @@
 ---
-#
 title: "VarImpBin"
 author: "Daniela Moleiro"
 date: "27 de Março de 2018"
