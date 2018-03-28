@@ -3,8 +3,7 @@ title: "VarImpBin"
 author: "Daniela Moleiro"
 date: "27 de Março de 2018"
 output: 
-  pdf_document: 
-    latex_engine: lualatex
+  pdf_document: latex_engine: lualatex
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
